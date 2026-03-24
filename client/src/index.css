@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply bg-stone-50 text-stone-900 font-sans antialiased selection:bg-orange-500/20;
+    }
+
+    /* Dark mode default */
+    .dark body {
+        @apply bg-[#0c0a09] text-stone-100;
+    }
+}
+
+@layer utilities {
+    .glass {
+        @apply bg-white/70 backdrop-blur-xl border border-white/40 shadow-xl shadow-stone-200/20;
+    }
+
+    .glass-dark {
+        @apply bg-[#1c1917]/70 backdrop-blur-xl border border-white/5 shadow-xl shadow-black/20;
+    }
+
+    .glass-card {
+        @apply bg-white/50 backdrop-blur-lg border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300;
+    }
+
+    .glass-card-dark {
+        @apply bg-[#292524]/50 backdrop-blur-lg border border-white/5 shadow-lg shadow-black/40 hover:shadow-xl hover:shadow-black/50 transition-all duration-300;
+    }
+
+    .text-gradient {
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-red-600;
+    }
+
+    .blob {
+        @apply absolute rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob;
+    }
+
+    .dark .blob {
+        @apply mix-blend-soft-light opacity-30;
+    }
+}
+
+@layer components {
+    .card-hover {
+        @apply hover:-translate-y-1 hover:shadow-lg transition-all duration-300 ease-out;
+    }
+}
+
+/* Animations */
+@keyframes blob {
+    0% {
+        transform: translate(0px, 0px) scale(1);
+    }
+
+    33% {
+        transform: translate(30px, -50px) scale(1.1);
+    }
+
+    66% {
+        transform: translate(-20px, 20px) scale(0.9);
+    }
+
+    100% {
+        transform: translate(0px, 0px) scale(1);
+    }
+}
+
+.animate-blob {
+    animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+    animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+    animation-delay: 4s;
+}
+
+/* Shimmer Effect */
+.shimmer {
+    @apply relative overflow-hidden;
+}
+
+.shimmer::after {
+    content: '';
+    @apply absolute inset-0 -translate-x-full animate-[shimmer_2s_infinite];
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+}
+
+.dark .shimmer::after {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+}
+
+@keyframes shimmer {
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Shake animation for error messages */
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    15% {
+        transform: translateX(-6px);
+    }
+
+    30% {
+        transform: translateX(5px);
+    }
+
+    45% {
+        transform: translateX(-4px);
+    }
+
+    60% {
+        transform: translateX(3px);
+    }
+
+    75% {
+        transform: translateX(-2px);
+    }
+}
+
+.animate-shake {
+    animation: shake 0.45s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+/* Check pop animation for forgot password success */
+@keyframes check-pop {
+    0% {
+        transform: scale(0) rotate(-15deg);
+        opacity: 0;
+    }
+
+    60% {
+        transform: scale(1.2) rotate(5deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-stone-300/50 rounded-full hover:bg-stone-400/70 transition-colors backdrop-blur-sm;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    @apply bg-stone-700/50 hover:bg-stone-600/70;
+}

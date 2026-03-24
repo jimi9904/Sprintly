@@ -1,0 +1,16 @@
+.scroll-reveal {
+    margin: 0;
+    padding: 0;
+}
+
+.scroll-reveal-text {
+    margin: 0;
+    padding: 0;
+    white-space: pre-wrap;
+    /* Ensure spaces are respected for split text */
+}
+
+.word {
+    display: inline-block;
+    will-change: opacity, filter, transform;
+}

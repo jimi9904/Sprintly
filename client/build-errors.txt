@@ -1,0 +1,89 @@
+﻿
+> client@0.0.0 build
+> vite build
+
+[36mvite v7.3.1 [32mbuilding client environment for production...[36m[39m
+transforming...
+[32mΓ£ô[39m 42 modules transformed.
+node.exe : [31mΓ£ù[39m Build 
+failed in 1.07s
+At line:1 char:1
++ & "C:\Program 
+Files\nodejs/node.exe" 
+"C:\Program Files\nodejs/node_mo 
+...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~
+    + CategoryInfo          : Not 
+   Specified: ([31mΓ£ù[39m Bui  
+  ld failed in 1.07s:String) []   
+ , RemoteException
+    + FullyQualifiedErrorId : Nat 
+   iveCommandError
+ 
+[31merror during build:
+[31m[vite:esbuild] Transform 
+failed with 2 errors:
+D:/Coding/Sprintly/client/src/feat
+ures/landing/LandingPage.jsx:615:1
+0: ERROR: Unexpected closing 
+"CometCard" tag does not match 
+opening "div" tag
+D:/Coding/Sprintly/client/src/feat
+ures/landing/LandingPage.jsx:728:6
+: ERROR: Unexpected closing "div" 
+tag does not match opening 
+"section" tag[31m
+file: [36mD:/Coding/Sprintly/clie
+nt/src/features/landing/LandingPag
+e.jsx:615:10[31m
+[33m
+[33mUnexpected closing 
+"CometCard" tag does not match 
+opening "div" tag[33m
+613 |                  </ul>
+614 |              </div>
+615 |          </CometCard>
+    |            ^
+616 |  
+617 |          {/* Pro Tier */}
+
+[33mUnexpected closing "div" tag 
+does not match opening "section" 
+tag[33m
+726 |              </div>
+727 |          </CometCard>
+728 |      </div>
+    |        ^
+729 |                      </div >
+730 |                  </section >
+[31m
+    at failureErrorWithLog (D:\Cod
+ing\Sprintly\client\node_modules\e
+sbuild\lib\main.js:1467:15)
+    at D:\Coding\Sprintly\client\n
+ode_modules\esbuild\lib\main.js:73
+6:50
+    at 
+responseCallbacks.<computed> (D:\C
+oding\Sprintly\client\node_modules
+\esbuild\lib\main.js:603:9)
+    at handleIncomingPacket (D:\Co
+ding\Sprintly\client\node_modules\
+esbuild\lib\main.js:658:12)
+    at Socket.readFromStdout (D:\C
+oding\Sprintly\client\node_modules
+\esbuild\lib\main.js:581:7)
+    at Socket.emit 
+(node:events:519:28)
+    at addChunk (node:internal/str
+eams/readable:561:12)
+    at 
+readableAddChunkPushByteMode (node
+:internal/streams/readable:512:3)
+    at Readable.push (node:interna
+l/streams/readable:392:5)
+    at Pipe.onStreamRead (node:int
+ernal/stream_base_commons:189:23)
+[39m
