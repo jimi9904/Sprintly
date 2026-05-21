@@ -1,0 +1,14 @@
+node_modules
+dist
+*.log
+.env
+.env.*
+build-errors.txt
+build_log*.txt
+build_output.log
+eslint_out.json
+eslint_output.txt
+lint-errors.json
+lint-output.json
+lint-output.txt
+lint-results.json

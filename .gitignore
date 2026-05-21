@@ -14,3 +14,7 @@ build/
 # Editor
 .vscode/
 .idea/
+
+# Docker
+.env.docker
+docker-compose.override.yml
